@@ -1,5 +1,31 @@
 <!-- login.html -->
-<form method="post">
-  {% csrf_token %} {{ form.as_p }}
-  <button type="submit">Submit Code</button>
-</form>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  </head>
+  <body>
+    <div id="popup-form" class="popup">
+      <div class="popup-content">
+        <span class="close-button">&times;</span>
+        <form method="post" action="{% url 'login' %}">
+          {% csrf_token %} {{ form.as_p }}
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
+</html>
+
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}

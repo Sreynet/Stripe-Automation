@@ -1,0 +1,60 @@
+/* Styles for the overall page */
+body {
+  background-color: white; /* Light background */
+  color: black;
+  font-family: Arial, sans-serif;
+}
+
+/* Styles for the popup */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8); /* Dark semi-transparent background */
+}
+
+.popup-content {
+  background: #222; /* Darker background for content */
+  color: #fff; /* Light text for contrast */
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.close-button {
+  float: right;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #fff; /* Light color for the close button */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+form input[type="text"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+form button {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #555; /* Slightly lighter button for contrast */
+  color: white;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #777; /* Hover effect */
+}
